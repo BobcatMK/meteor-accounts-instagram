@@ -36,6 +36,9 @@ var getTokenResponse = function (query) {
         }
       });
 
+    console.log('LOGGING RESPONSE FROM THE INSTAGRAM ------------------->', response);
+    console.log('<-------------------------- END LOGGING RESPONSE');
+
     if (response.error) // if the http response was an error
         throw response.error;
     if (typeof response.content === "string")
