@@ -48,10 +48,10 @@ var getTokenResponse = function (query) {
     if (response.content.error)
         throw response.content;
   } catch (err) {
-    console.log('throwing error -------------->', response);
+    console.log('throwing error -------------->', err);
     console.log('<-------------------------- end throwing error');
-    console.warn('throwing error -------------->', response);
-    console.warn('<-------------------------- end throwing error');
+    console.warn('respone -------------->', response);
+    console.warn('<-------------------------- end response');
     throw _.extend(new Error("Failed to complete OAuth handshake with Instagram. " + err.message),
                    {response: err.response});
   }
