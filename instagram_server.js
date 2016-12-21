@@ -36,6 +36,8 @@ var getTokenResponse = function (query) {
         }
       });
 
+    console.warn('LOGGING RESPONSE FROM THE INSTAGRAM ------------------->', response);
+    console.warn('<-------------------------- END LOGGING RESPONSE');
     console.log('LOGGING RESPONSE FROM THE INSTAGRAM ------------------->', response);
     console.log('<-------------------------- END LOGGING RESPONSE');
 
@@ -46,6 +48,10 @@ var getTokenResponse = function (query) {
     if (response.content.error)
         throw response.content;
   } catch (err) {
+    console.log('throwing error -------------->', response);
+    console.log('<-------------------------- end throwing error');
+    console.warn('throwing error -------------->', response);
+    console.warn('<-------------------------- end throwing error');
     throw _.extend(new Error("Failed to complete OAuth handshake with Instagram. " + err.message),
                    {response: err.response});
   }
